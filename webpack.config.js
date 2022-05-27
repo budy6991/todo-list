@@ -9,7 +9,6 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
   },
   loader: {
-    
     use: {
       loader: 'babel-loader',
       options: {

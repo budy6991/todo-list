@@ -1,22 +1,20 @@
 export default {
-    getAddProject(){
+    addProject(){
         return document.querySelector('.add-project-button')
     },
-    getSubmitProject(){
+    submitProject(){
         return document.querySelector('.submit-project')
     }, 
-    getProjectModal(){
+    projectModal(){
         return document.querySelector('.project-modal')
     }, 
-    getSubmitProjectModal(){
-        return document.querySelector('.submit-project')
-    }, 
-
-    getCloseModal(){
+    closeModal(){
         return document.querySelector('.close-modal')
     },
-
-    getProjectName(){
+    projectName(){
         return document.getElementById('add-project-name').value
+    }, 
+    body(){
+        return document.querySelector('body')
     }
 }

@@ -1,24 +1,24 @@
 import getElements from "./getElements";
 import createProjects from './createProjects'
- 
+import displayModules from './displayModules'
 
 let eventHandlers = {
 
     addProject() {
-        getElements.getAddProject().onclick = function () {
-            getElements.getProjectModal().showModal()
+        getElements.addProject().onclick = function () {
+            getElements.projectModal().showModal()
         }
     },
     closeModal(){
-        getElements.getCloseModal().onclick = function(){
-            getElements.getProjectModal().close()
+        getElements.closeModal().onclick = function(){
+            getElements.projectModal().close()
         }
     },
     submitProject(){
-        getElements.getSubmitProject().onclick = function(){
-        let project = createProjects.createProject(getElements.getProjectName())
+        getElements.submitProject().onclick = function(){
+        let project = createProjects.createProject(getElements.projectName())
         createProjects.addProjectToArray(project)
-        console.log(createProjects.arrayOfProjects)
+        displayModules.project(getElements.projectName())
         }
     }, 
 }
