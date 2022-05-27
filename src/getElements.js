@@ -12,6 +12,10 @@ export default {
         return document.querySelector('.submit-project')
     }, 
 
+    getCloseModal(){
+        return document.querySelector('.close-modal')
+    },
+
     getProjectName(){
         return document.getElementById('add-project-name').value
     }

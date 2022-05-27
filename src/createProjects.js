@@ -1,4 +1,4 @@
-let createProjects = {
+let factoryModule = {
 
     arrayOfProjects: [],
     createTodo (name, notes, date, priority) {
@@ -22,8 +22,8 @@ let createProjects = {
         return {name, todos, storeTodos, removeTodo}
     },
     addProjectToArray (project) {
-        arrayOfProjects.push(project)
+        this.arrayOfProjects.push(project)
     }
 }
 
-export {createProjects}
+export default factoryModule
