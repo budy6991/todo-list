@@ -39,10 +39,11 @@ let display = {
             }} )   
         }
 
-        console.log(createProjects.arrayOfProjects)
+        
+
+        
     }
 }
 
-//We have appended the project to the body, now we need to display it as a card, with an expand button and a remove button, so we can keep adding the functionality, for creating todos, and stuff like that
 
 export default display

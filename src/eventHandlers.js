@@ -16,17 +16,37 @@ let eventHandlers = {
         }
     },
 
+    closeTodoModal() {
+        getElements.closeTodoModal().onclick = function(){
+            getElements.todoModal().close()
+        }
+    },
+
     submitProject(){
+
         getElements.submitProject().onclick = function(){
 
-        let project = createProjects.createProject(getElements.projectName())
+            let project = createProjects.createProject(getElements.projectName())
 
-        createProjects.addProjectToArray(project)
+            createProjects.addProjectToArray(project)
 
-        displayModules.project(getElements.projectName())
+            displayModules.project(getElements.projectName())
 
+            getElements.submitTodo().onclick = function (){
+
+            let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
+
+            project.storeTodos(todo)
+
+            console.log(createProjects.arrayOfProjects)
+        }
         }
     }, 
+
+ 
+    
+  
+
 }
 
 export {eventHandlers}
