@@ -1,3 +1,4 @@
+
 export default {
     addProject(){
         return document.querySelector('.add-project-button')
@@ -8,6 +9,9 @@ export default {
     projectModal(){
         return document.querySelector('.project-modal')
     }, 
+    todoModal(){
+        return document.querySelector('.todo-modal')
+    },
     closeModal(){
         return document.querySelector('.close-modal')
     },
@@ -16,5 +20,5 @@ export default {
     }, 
     body(){
         return document.querySelector('body')
-    }
+    },
 }

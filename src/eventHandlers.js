@@ -9,6 +9,12 @@ let eventHandlers = {
             getElements.projectModal().showModal()
         }
     },
+    addTodoTo() {
+        getElements.addTodo().addEventListener('click', ()=> {
+            alert('hola buenos dias')
+        })
+        }
+    ,
     closeModal(){
         getElements.closeModal().onclick = function(){
             getElements.projectModal().close()

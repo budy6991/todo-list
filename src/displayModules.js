@@ -1,24 +1,33 @@
+import { remove } from "lodash";
 import getElements from "./getElements";
-
-let projectCard = document.createElement('div')
-let projectName = document.createElement('p')
-let addTodo = document.createElement('button')
-let removeProject = document.createElement('button')
-
-projectCard.classList.add('project-card')
-projectName.classList.add('project-name')
-addTodo.classList.add('add-todo')
-removeProject.classList.add('remove-project')
-
-addTodo.textContent = 'add todo'
-removeProject.textContent = 'remove'
 
 
 let display = {
     project(name) {
+        let project = document.createElement('div')
+        let projectName = document.createElement('p')
+        let addTodo = document.createElement('button')
+
+        addTodo.classList.add('add-todo')
+        let removeProject = document.createElement('button')
+        removeProject.classList.add('remove-project')
+
+        removeProject.textContent = 'Remove'
+        addTodo.textContent = 'Add todo'
+        project.classList.add('project-card')
         projectName.textContent = name
-        projectCard.append(projectName, addTodo, removeProject)
-        getElements.body().appendChild(projectCard)
+
+
+        addTodo.onclick = function (){
+            alert('hello')
+        }
+
+        removeProject.onclick = function (){
+            alert('bye')
+        }
+
+        project.append(projectName, addTodo, removeProject)
+        getElements.body().appendChild(project)
     }
 }
 
