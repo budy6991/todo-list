@@ -21,5 +21,28 @@
         </form>
         <button class="close-modal">close</button>
     </dialog>
+    <dialog class="todo-modal">
+        <form class="todo-form" method="dialog">
+            <p>
+                <label for="todo-name">Name</label>
+                <input type="text" id="todo-name" name="todo-name">
+            </p>
+            <div>
+                <label for="todo-notes">Notes</label>
+                <textarea name="todo-notes" id="todo-notes" cols="30" rows="10"></textarea>
+            </div>
+            <div>
+               <label for="todo-date">Date</label> 
+               <input type="date" id="todo-date" name="todo-date">
+            </div>
+            <div>
+                <label for="todo-priority">todo-priority</label>
+                <select name="todo-priority" id="todo-priority"></select>
+                <option value="high">High</option>
+                <option value="medium">medium</option>
+                <option value="low">Low</option>
+            </div>
+        </form>
+    </dialog>
 </body>
 </html>
