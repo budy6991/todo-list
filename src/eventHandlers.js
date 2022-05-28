@@ -15,6 +15,7 @@ let eventHandlers = {
             getElements.projectModal().close()
         }
     },
+
     submitProject(){
         getElements.submitProject().onclick = function(){
 

@@ -26,7 +26,8 @@ let display = {
         getElements.body().appendChild(project)
 
         addTodo.onclick = function (){
-            alert('hello')
+            getElements.todoModal().showModal()
+            
         }
         removeProject.onclick = function (){
             getElements.body().removeChild(project)
@@ -34,11 +35,9 @@ let display = {
 
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
-                
+
             }} )   
         }
-
-        
 
         console.log(createProjects.arrayOfProjects)
     }
