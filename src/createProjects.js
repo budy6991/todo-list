@@ -1,3 +1,5 @@
+import { remove } from "lodash"
+
 let factoryModule = {
 
     arrayOfProjects: [],
@@ -21,9 +23,10 @@ let factoryModule = {
 
         return {name, todos, storeTodos, removeTodo}
     },
-    addProjectToArray (project) {
+        addProjectToArray (project) {
         this.arrayOfProjects.push(project)
-    }
+    },
+    
 }
 
 export default factoryModule
