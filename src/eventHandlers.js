@@ -32,18 +32,14 @@ let eventHandlers = {
 
             displayModules.project(getElements.projectName())
 
-            getElements.submitTodo().onclick = function (){
 
-            let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
-
-            project.storeTodos(todo)
-
-            console.log(createProjects.arrayOfProjects)
+        
         }
-        }
+
     }, 
 
  
+    //What is happening now, is that we create a project, and we stick to it the method of storing the todo, the problems is that it will always push it to the last project, created because the variabe is constantly updating 
     
   
 

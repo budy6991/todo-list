@@ -35,12 +35,20 @@ let display = {
 
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
-
+                console.log(createProjects.arrayOfProjects)
             }} )   
         }
 
-        
-
+        getElements.submitTodo().onclick = function (){
+            createProjects.arrayOfProjects.forEach(project => {
+                if (project.name === projectName.textContent) {
+                    let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
+                    project.storeTodos(todo)
+                    console.log(createProjects.arrayOfProjects)
+                }
+            })
+            
+        }
         
     }
 }
