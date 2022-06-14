@@ -23,6 +23,11 @@ let display = {
         projectName.textContent = name
 
         project.append(projectName, addTodo, removeProject)
+
+        project.dataset.identifier = name 
+
+        
+
         getElements.body().appendChild(project)
 
         addTodo.onclick = function (){
@@ -32,7 +37,6 @@ let display = {
         removeProject.onclick = function (){
             getElements.body().removeChild(project)
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
-
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
                 console.log(createProjects.arrayOfProjects)
@@ -40,6 +44,7 @@ let display = {
         }
 
         getElements.submitTodo().onclick = function (){
+            console.log(project.dataset.identifier)
             createProjects.arrayOfProjects.forEach(project => {
                 if (project.name === projectName.textContent) {
                     let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
@@ -52,6 +57,7 @@ let display = {
         
     }
 }
+
 
 
 export default display
