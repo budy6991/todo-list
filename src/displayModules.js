@@ -24,9 +24,14 @@ let display = {
 
         project.append(projectName, addTodo, removeProject)
 
-        project.dataset.identifier = name 
+
+        /// THIS HERE IS THE DATA ATTRIBUTE//
 
         
+        project.dataset.identifier = name 
+        addTodo.dataset.identifier = name 
+
+        ////////////////////////////////////
 
         getElements.body().appendChild(project)
 
@@ -44,12 +49,21 @@ let display = {
         }
 
         getElements.submitTodo().onclick = function (){
-            console.log(project.dataset.identifier)
+
+            //I was checking here if when I click on different projects, it tells me the data attribute of the project I am clicking on or not
+
+            console.log(createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier))
+
+            //
+
             createProjects.arrayOfProjects.forEach(project => {
+                
                 if (project.name === projectName.textContent) {
+                    
                     let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                     project.storeTodos(todo)
-                    console.log(createProjects.arrayOfProjects)
+                    // console.log(createProjects.arrayOfProjects)
+                    
                 }
             })
             
