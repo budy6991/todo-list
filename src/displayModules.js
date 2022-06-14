@@ -24,20 +24,16 @@ let display = {
 
         project.append(projectName, addTodo, removeProject)
 
-
-        /// THIS HERE IS THE DATA ATTRIBUTE//
-
-        
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
-        ////////////////////////////////////
+        const identifier = createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier)
 
         getElements.body().appendChild(project)
 
         addTodo.onclick = function (){
             getElements.todoModal().showModal()
-            
+            console.log(identifier)
         }
         removeProject.onclick = function (){
             getElements.body().removeChild(project)
@@ -50,19 +46,13 @@ let display = {
 
         getElements.submitTodo().onclick = function (){
 
-            //I was checking here if when I click on different projects, it tells me the data attribute of the project I am clicking on or not
-
-            console.log(createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier))
-
-            //
-
             createProjects.arrayOfProjects.forEach(project => {
-                
-                if (project.name === projectName.textContent) {
+
+                if (project.name === addTodo.dataset.identifier) {
                     
                     let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                     project.storeTodos(todo)
-                    // console.log(createProjects.arrayOfProjects)
+                    console.log(createProjects.arrayOfProjects)
                     
                 }
             })
