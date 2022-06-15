@@ -27,13 +27,16 @@ let display = {
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
-        const identifier = createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier)
+        let identifier
 
         getElements.body().appendChild(project)
 
         addTodo.onclick = function (){
             getElements.todoModal().showModal()
-            console.log(identifier)
+            
+           identifier = createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier)
+
+        //    console.log(identifier)
         }
         removeProject.onclick = function (){
             getElements.body().removeChild(project)
@@ -50,15 +53,14 @@ let display = {
 
                 if (project.name === addTodo.dataset.identifier) {
                     
+                    project = identifier
                     let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                     project.storeTodos(todo)
                     console.log(createProjects.arrayOfProjects)
                     
                 }
             })
-            
         }
-        
     }
 }
 
