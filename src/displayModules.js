@@ -7,54 +7,61 @@ import removeChildren from "./removeChildren";
 
 let display = {
 
+
+
     project(name) {
+        
+        
 
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
+        let expandProject = document.createElement('button')
+        let removeProject = document.createElement('button')
 
         addTodo.classList.add('add-todo')
-        let removeProject = document.createElement('button')
         removeProject.classList.add('remove-project')
+        project.classList.add('project-card')
+        expandProject.classList.add('expand-project')
 
         removeProject.textContent = 'Remove'
         addTodo.textContent = 'Add todo'
-        project.classList.add('project-card')
+        expandProject.textContent = 'Expand'
         projectName.textContent = name
 
-        project.append(projectName, addTodo, removeProject)
+        project.append(projectName, addTodo, removeProject, expandProject)
         getElements.body().appendChild(project)
 
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
-        let identifier
-
 
         addTodo.onclick = function (){
 
-        getElements.todoModal().showModal()
-        getElements.submitTodo().onclick = function (){
+            console.log(createProjects.arrayOfProjects)
 
-            createProjects.arrayOfProjects.forEach(project => {
+            getElements.todoModal().showModal()
+            getElements.submitTodo().onclick = function (){
+                
+                createProjects.arrayOfProjects.forEach(project => {
+                    
+                    if (project.name === addTodo.dataset.identifier) {
+                        
+                        let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
+                        
+                        project.storeTodos(todo)
+                        
+                        
+                        console.log(createProjects.arrayOfProjects)
 
-                if (project.name === addTodo.dataset.identifier) {
-                    
-                    let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
-
-                    project.storeTodos(todo)
-                    
-                    
-                    console.log(createProjects.arrayOfProjects)
-                    
-                }
-            })
-        }
+                        expandProject.onclick = function(e){
+                            console.log(project)
+                        }
+                    }
+                })
+            }
             
-           identifier = createProjects.arrayOfProjects.filter(project => project.name === addTodo.dataset.identifier)
-
-           identifier = identifier[0]
-           
+            
         }
         removeProject.onclick = function (){
             getElements.body().removeChild(project)
