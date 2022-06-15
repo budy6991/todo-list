@@ -5,8 +5,6 @@ import displayModules from './displayModules'
 let eventHandlers = {
 
     
-
-
     addProject() {
         getElements.addProject().onclick = function () {
             getElements.projectModal().showModal()

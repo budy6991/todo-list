@@ -3,11 +3,16 @@
     padding: 0;
 }
 
+body {
+    height: 100vh;
+    width: 100vw;
+}
+
 .project-card {
     padding: 1em;
     border: solid black 1px;
     display: flex;
-    width: 30vw;
+    width: 40vw;
 }
 
 .todo-modal {
@@ -17,4 +22,11 @@
 
 .expand-project {
     background-color: orange;
+}
+
+.todo-container {
+    height: 100vh;
+    width: 50vw;
+    float: right;
+    background: orange;
 }

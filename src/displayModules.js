@@ -11,24 +11,37 @@ let display = {
 
     project(name) {
         
-        
-
+    
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
         let expandProject = document.createElement('button')
         let removeProject = document.createElement('button')
+        
+
+        let todoContainer = document.createElement('div')
+        let todoCard = document.createElement('div')
+        let todoName = document.createElement('div')
+        let todoNotes = document.createElement('div')
+        let todoDate = document.createElement('div')
+        let todoPriority = document.createElement('div')
+        let todoExpand = document.createElement('button')
+        let todoRemove = document.createElement('button')
+
 
         addTodo.classList.add('add-todo')
         removeProject.classList.add('remove-project')
         project.classList.add('project-card')
         expandProject.classList.add('expand-project')
+        todoContainer.classList.add('todo-container')
 
         removeProject.textContent = 'Remove'
         addTodo.textContent = 'Add todo'
         expandProject.textContent = 'Expand'
         projectName.textContent = name
 
+        
+        
         project.append(projectName, addTodo, removeProject, expandProject)
         getElements.body().appendChild(project)
 
@@ -38,7 +51,7 @@ let display = {
 
         addTodo.onclick = function (){
 
-            console.log(createProjects.arrayOfProjects)
+            
 
             getElements.todoModal().showModal()
             getElements.submitTodo().onclick = function (){
@@ -50,16 +63,20 @@ let display = {
                         let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                         
                         project.storeTodos(todo)
-                        
-                        
+                                                
                         console.log(createProjects.arrayOfProjects)
 
-                        expandProject.onclick = function(e){
-                            console.log(project)
-                        }
+                    }
+
+                    expandProject.onclick = function (){
+                        console.log(project.todos)
                     }
                 })
+
+                
+
             }
+            
             
             
         }
