@@ -91,15 +91,24 @@ let display = {
 
                     }
 
-                    // expandProject.onclick = function (){
+                    expandProject.onclick = function (){
 
-                    //     project.todos.forEach(todo => {
+                        project.todos.forEach(todo => {
 
-                    //         getElements.body().appendChild(todoContainer)
+                            getElements.body().appendChild(todoContainer)
                 
-                    //     })
+                        })
+
+                        // if (project.todos != '') {
+                        //     getElements.body().removeChild(todoContainer)
+
+                        //     expandProject.onclick = function (){
+                        //         getElements.body().appendChild(todoContainer)
+                        //     }
+
+                        // }
                          
-                    // }
+                    }
                         
                 })
 
@@ -109,6 +118,7 @@ let display = {
 
         removeProject.onclick = function (){
             getElements.projectContainer().removeChild(project)
+            getElements.body().removeChild(todoContainer)
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
