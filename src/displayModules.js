@@ -93,16 +93,11 @@ let display = {
 
                     expandProject.onclick = function (){
 
-                        project.todos.forEach(todo => {
-
-                            getElements.body().appendChild(todoContainer)
+                                       
+                        getElements.body().appendChild(todoContainer)
                 
-                        })
 
-                        
-                         
                     }
-                        
                 })
 
             }
