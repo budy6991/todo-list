@@ -36,12 +36,12 @@ export default {
     todoPriority(){
         return document.getElementById('todo-priority').value
     },
-    body(){
-        return document.querySelector('body')
-    },
     projectContainer(){
         return document.querySelector('.project-container')
     }, 
+    body(){
+        return document.querySelector('body')
+    },
     
     
 }

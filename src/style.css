@@ -35,9 +35,9 @@ body {
 .todo-card {
     padding: 1em;
     border: solid black 1px;
-    
     margin: 2%;
     flex: 1;
+    max-height: 17vh
 }
 
 .close-container {
@@ -58,7 +58,7 @@ body {
 }
 
 .todo-container {
-    height: 100vh;
+    height: auto;
     width: 30vw;
     flex: 1;
     background: rgb(255, 208, 121);

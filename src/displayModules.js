@@ -51,8 +51,6 @@ let display = {
 
         addTodo.onclick = function (){
             
-            
-
             getElements.todoModal().showModal()
             getElements.submitTodo().onclick = function (){
                 
@@ -87,28 +85,30 @@ let display = {
                         
                         todoContainer.append(todoCard)
 
+                        console.log(project)
                                                 
                         console.log(createProjects.arrayOfProjects)
 
                     }
 
-                    expandProject.onclick = function (){
+                    // expandProject.onclick = function (){
 
-                        project.todos.forEach(todo => {
+                    //     project.todos.forEach(todo => {
 
-                            getElements.body().appendChild(todoContainer)
+                    //         getElements.body().appendChild(todoContainer)
                 
-                        })
+                    //     })
                          
-                    }
+                    // }
                         
                 })
 
             }
         
         }
+
         removeProject.onclick = function (){
-            getElements.body().removeChild(project)
+            getElements.projectContainer().removeChild(project)
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
