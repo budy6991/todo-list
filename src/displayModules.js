@@ -1,4 +1,4 @@
-import { create, remove } from "lodash";
+import { create, functionsIn, remove } from "lodash";
 import getElements from "./getElements";
 import createProjects from './createProjects'
 import { eventHandlers } from "./eventHandlers";
@@ -20,6 +20,7 @@ let display = {
         
 
         let todoContainer = document.createElement('div')
+        let closeContainer = document.createElement('button')
         let todoCard = document.createElement('div')
         let todoName = document.createElement('div')
         let todoNotes = document.createElement('div')
@@ -34,13 +35,16 @@ let display = {
         project.classList.add('project-card')
         expandProject.classList.add('expand-project')
         todoContainer.classList.add('todo-container')
+        closeContainer.classList.add('close-container')
 
         removeProject.textContent = 'Remove'
         addTodo.textContent = 'Add todo'
         expandProject.textContent = 'Expand'
         projectName.textContent = name
 
-        
+        closeContainer.textContent = 'CLOSE'
+
+        todoContainer.append(closeContainer)
         
         project.append(projectName, addTodo, removeProject, expandProject)
         getElements.projectContainer().appendChild(project)
@@ -93,6 +97,9 @@ let display = {
             }} )   
         }
 
+        closeContainer.onclick = function(){
+            getElements.body().removeChild(todoContainer)
+        }
         
     }
 }

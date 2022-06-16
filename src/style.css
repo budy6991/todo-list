@@ -32,7 +32,14 @@ body {
     margin: 2%;
 }
 
-
+.close-container {
+    background-color: red;
+    color: white;
+    margin: 2%;
+    position: absolute;
+    right: 0;
+    
+}
 
 .todo-modal {
     padding: 1em;
@@ -48,4 +55,6 @@ body {
     width: 30vw;
     flex: 1;
     background: rgb(255, 208, 121);
+    display: flex;
+    flex-direction: column;
 }
