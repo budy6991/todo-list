@@ -11,7 +11,7 @@ let display = {
 
     project(name) {
         
-    
+        
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
@@ -93,9 +93,10 @@ let display = {
 
                     expandProject.onclick = function (){
 
-                                       
-                        getElements.body().appendChild(todoContainer)
+                        getElements.mainContainer().appendChild(todoContainer)
+                                      
                 
+
 
                     }
                 })

@@ -42,6 +42,9 @@ export default {
     body(){
         return document.querySelector('body')
     },
+    mainContainer(){
+        return document.querySelector('.main-container')
+    }
     
     
 }
