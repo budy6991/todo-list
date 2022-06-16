@@ -99,14 +99,7 @@ let display = {
                 
                         })
 
-                        // if (project.todos != '') {
-                        //     getElements.body().removeChild(todoContainer)
-
-                        //     expandProject.onclick = function (){
-                        //         getElements.body().appendChild(todoContainer)
-                        //     }
-
-                        // }
+                        
                          
                     }
                         
