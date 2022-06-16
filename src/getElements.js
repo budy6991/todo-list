@@ -39,5 +39,9 @@ export default {
     body(){
         return document.querySelector('body')
     },
+    projectContainer(){
+        return document.querySelector('.project-container')
+    }, 
+    
     
 }

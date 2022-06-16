@@ -43,15 +43,13 @@ let display = {
         
         
         project.append(projectName, addTodo, removeProject, expandProject)
-        getElements.body().appendChild(project)
+        getElements.projectContainer().appendChild(project)
 
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
 
         addTodo.onclick = function (){
-
-            
 
             getElements.todoModal().showModal()
             getElements.submitTodo().onclick = function (){
@@ -62,6 +60,10 @@ let display = {
                         
                         let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                         
+                        // todoName.textContent = todo.name
+                        // todoCard.appendChild(todoName)
+                        // todoContainer.appendChild(todoCard)
+
                         project.storeTodos(todo)
                                                 
                         console.log(createProjects.arrayOfProjects)
@@ -69,8 +71,10 @@ let display = {
                     }
 
                     expandProject.onclick = function (){
-                        console.log(project.todos)
+                        getElements.body().appendChild(todoContainer)
                     }
+
+                    console.log(todo)
                 })
 
                 
