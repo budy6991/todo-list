@@ -107,7 +107,7 @@ let display = {
 
         removeProject.onclick = function (){
             getElements.projectContainer().removeChild(project)
-            getElements.body().removeChild(todoContainer)
+            getElements.mainContainer().removeChild(todoContainer)
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
