@@ -93,8 +93,13 @@ let display = {
                            console.log(project)
                         }
 
+                        // todoExpand.onclick = function(){
+                        //     const index = project.todos.indexOf(todo)
+                        //    project.todos.splice(index, 1)
+                        //    getElements.todoModal().showModal()
+                        // }
+                                  
                         
-                                                
                         console.log(createProjects.arrayOfProjects)
 
                     }
@@ -114,7 +119,7 @@ let display = {
 
         removeProject.onclick = function (){
             getElements.projectContainer().removeChild(project)
-            getElements.mainContainer().removeChild(todoContainer)
+            // getElements.mainContainer().removeChild(todoContainer) we have to create a condition for this one, when there is not a children element into the todo container, otherwise it will throw an error. 
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
