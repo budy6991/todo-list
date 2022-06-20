@@ -59,7 +59,7 @@ body {
 
 .todo-container {
     height: auto;
-    width: 30vw;
+    width: 100%;
     flex: 1;
     background: rgb(255, 208, 121);
     display: flex;

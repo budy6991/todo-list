@@ -1,4 +1,4 @@
-import { create, functionsIn, remove } from "lodash";
+import { create, functionsIn, indexOf, remove } from "lodash";
 import getElements from "./getElements";
 import createProjects from './createProjects'
 import { eventHandlers } from "./eventHandlers";
@@ -85,7 +85,15 @@ let display = {
                         
                         todoContainer.append(todoCard)
 
-                        console.log(project)
+                        todoRemove.onclick = function(){
+                           const index = project.todos.indexOf(todo)
+                           project.todos.splice(index, 1)
+                           todoContainer.removeChild(todoCard)
+                           console.log(project.todos)
+                           console.log(project)
+                        }
+
+                        
                                                 
                         console.log(createProjects.arrayOfProjects)
 
@@ -95,10 +103,9 @@ let display = {
                         removeChildren(getElements.mainContainer())
                         getElements.mainContainer().appendChild(todoContainer)
                                       
-                
-
-
                     }
+
+                    
                 })
 
             }
