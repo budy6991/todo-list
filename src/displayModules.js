@@ -11,7 +11,6 @@ let display = {
 
     project(name) {
         
-        
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
@@ -20,8 +19,6 @@ let display = {
         let todoContainer = document.createElement('div')
 
         let closeContainer = document.createElement('button')
-
-        
 
         addTodo.classList.add('add-todo')
         removeProject.classList.add('remove-project')
@@ -39,15 +36,13 @@ let display = {
 
         closeContainer.textContent = 'CLOSE'
         
-
         todoContainer.append(closeContainer)
-        
+    
         project.append(projectName, addTodo, removeProject, expandProject)
         getElements.projectContainer().appendChild(project)
 
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
-
 
         addTodo.onclick = function (){
             
@@ -62,7 +57,6 @@ let display = {
                     
                         project.storeTodos(todo)
 
-                        
                         let todoCard = document.createElement('div')
                         let todoName = document.createElement('div')
                         let todoNotes = document.createElement('div')
@@ -93,13 +87,12 @@ let display = {
                            console.log(project)
                         }
 
-                        // todoExpand.onclick = function(){
-                        //     const index = project.todos.indexOf(todo)
-                        //    project.todos.splice(index, 1)
-                        //    getElements.todoModal().showModal()
-                        // }
+                        todoExpand.onclick = function(){
+                            const index = project.todos.indexOf(todo)
+                           project.todos.splice(index, 1)
+                           getElements.todoModal().showModal(index)
+                        }
                                   
-                        
                         console.log(createProjects.arrayOfProjects)
 
                     }
@@ -110,7 +103,6 @@ let display = {
                                       
                     }
 
-                    
                 })
 
             }
