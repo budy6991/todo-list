@@ -92,7 +92,7 @@ let display = {
                     }
 
                     expandProject.onclick = function (){
-
+                        removeChildren(getElements.mainContainer())
                         getElements.mainContainer().appendChild(todoContainer)
                                       
                 
@@ -116,7 +116,7 @@ let display = {
         }
 
         closeContainer.onclick = function(){
-            getElements.body().removeChild(todoContainer)
+            removeChildren(getElements.mainContainer())
         }
         
     }
