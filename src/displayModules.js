@@ -18,6 +18,7 @@ let display = {
         let expandProject = document.createElement('button')
         let removeProject = document.createElement('button')
         let todoContainer = document.createElement('div')
+        let submitTodoEdit = document.querySelector('.submit-todo-edit')
 
         let closeContainer = document.createElement('button')
 
@@ -67,7 +68,7 @@ let display = {
                         let todoRemove = document.createElement('button')
 
 
-                        todoExpand.textContent  = 'Expand'
+                        todoExpand.textContent  = 'EDIT'
                         todoRemove.textContent = 'X'
                         todoCard.classList.add('todo-card')
 
@@ -89,7 +90,13 @@ let display = {
                         }
 
                         todoExpand.onclick = function(){
-                            console.log(todo.date)
+                            getElements.todoModalEdit().showModal()
+                            document.getElementById('todo-name-edit').placeholder = todo.name
+                            submitTodoEdit.onclick = function(){
+                                todo.name = document.getElementById('todo-name-edit').value  
+                                console.log(todo.name)
+                            }
+
                            
                         }
                                   

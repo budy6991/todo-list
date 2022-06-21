@@ -44,6 +44,15 @@ export default {
     },
     mainContainer(){
         return document.querySelector('.main-container')
+    },
+    todoModalEdit(){
+        return document.querySelector('.todo-modal-edit')
+    },
+    submitTodoEdit(){
+        return document.querySelector('.submit-todo-edit')
+    }, 
+    todoNameEdit(){
+        return document.querySelector('.todo-name-edit')
     }
     
     
