@@ -65,9 +65,26 @@
             <input type="text" id="todo-name-edit" name="todo-name-edit">
         </p>
         <div>
+            <label for="todo-notes-edit">Notes</label>
+            <textarea name="todo-notes-edit" id="todo-notes-edit" cols="30" rows="10"></textarea>
+        </div>
+        <div>
+            <label for="todo-date-edit">Date</label> 
+            <input type="date" id="todo-date-edit" name="todo-date-edit">
+         </div>
+         <div>
+            <label for="todo-priority-edit">todo-priority</label>
+            <select name="todo-priority-edit" id="todo-priority-edit">
+            <option value="high">High</option>
+            <option value="medium">medium</option>
+            <option value="low">Low</option>
+        </select>
+        </div>
+        <div>
             <button class="submit-todo-edit">Submit</button>
         </div>
         </form>
+        <button class="close-todo-modal-edit">close</button>
     </dialog>
 </body>
 </html>
