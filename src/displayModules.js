@@ -98,38 +98,23 @@ let display = {
                         
                             submitTodoEdit.onclick = function(){
 
-                                
+                                // todoContainer.removeChild(todoCard)
                                 
                                 todo.name = getElements.todoNameEdit().value
                                 todo.notes = getElements.todoNotesEdit().value
                                 todo.date = getElements.todoDateEdit().value
                                 todo.priority = getElements.todoPriority().value
+
+                                getElements.todoNameEdit().value = todo.name
+                                getElements.todoNotesEdit().value = todo.notes
+                                getElements.todoDateEdit().value = todo.date
+                                getElements.todoPriorityEdit().value = todo.priority
                                 
-                                removeChildren(todoCard)
-
-                                todoName.append(`Name: ${todo.name}`)
-                                todoNotes.append(`Notes: ${todo.notes}`)
-                                todoDate.append(`Date: ${todo.date}`)
-                                todoPriority.append(`Priority: ${todo.priority}`)
-
-                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
-                                
-                                todoContainer.append(todoCard)
-                                
-
-
-                                
-
-                                console.log(project)
-                                console.log(todo)
-
                             }
 
-                           
                         }
                                   
                         console.log(createProjects.arrayOfProjects)
-
                     }
 
                     expandProject.onclick = function (){
