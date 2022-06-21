@@ -7,17 +7,15 @@ import removeChildren from "./removeChildren";
 
 let display = {
 
-
-
     project(name) {
 
-        
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
         let expandProject = document.createElement('button')
         let removeProject = document.createElement('button')
         let todoContainer = document.createElement('div')
+        
         let submitTodoEdit = document.querySelector('.submit-todo-edit')
 
         let closeContainer = document.createElement('button')
@@ -66,7 +64,6 @@ let display = {
                         let todoPriority = document.createElement('div')
                         let todoExpand = document.createElement('button')
                         let todoRemove = document.createElement('button')
-
 
                         todoExpand.textContent  = 'EDIT'
                         todoRemove.textContent = 'X'
