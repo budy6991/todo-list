@@ -87,8 +87,13 @@ let display = {
                         }
 
                         todoExpand.onclick = function(){
+
                             getElements.todoModalEdit().showModal()
+
                             document.getElementById('todo-name-edit').placeholder = todo.name
+                            
+
+
                             submitTodoEdit.onclick = function(){
                                 todo.name = document.getElementById('todo-name-edit').value  
                                 console.log(todo.name)

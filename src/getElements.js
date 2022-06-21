@@ -51,9 +51,21 @@ export default {
     submitTodoEdit(){
         return document.querySelector('.submit-todo-edit')
     }, 
+    closeTodoModalEdit(){
+        return document.querySelector('.close-todo-modal-edit')
+    },
     todoNameEdit(){
         return document.querySelector('.todo-name-edit')
-    }
+    }, 
+    todoNotesEdit(){
+        return document.getElementById('todo-notes-edit')
+    }, 
+    todoDateEdit(){
+        return document.getElementById('todo-date-edit')
+    }, 
+    todoPriorityEdit(){
+        return document.getElementById('todo-priority-edit')
+    },
     
     
 }
