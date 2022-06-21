@@ -95,11 +95,34 @@ let display = {
                             getElements.todoDateEdit().value = todo.date
                             getElements.todoPriorityEdit().value = todo.priority
                             
-                            
-
-
+                        
                             submitTodoEdit.onclick = function(){
+
                                 
+                                
+                                todo.name = getElements.todoNameEdit().value
+                                todo.notes = getElements.todoNotesEdit().value
+                                todo.date = getElements.todoDateEdit().value
+                                todo.priority = getElements.todoPriority().value
+                                
+                                removeChildren(todoCard)
+
+                                todoName.append(`Name: ${todo.name}`)
+                                todoNotes.append(`Notes: ${todo.notes}`)
+                                todoDate.append(`Date: ${todo.date}`)
+                                todoPriority.append(`Priority: ${todo.priority}`)
+
+                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
+                                
+                                todoContainer.append(todoCard)
+                                
+
+
+                                
+
+                                console.log(project)
+                                console.log(todo)
+
                             }
 
                            
