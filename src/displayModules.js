@@ -91,15 +91,15 @@ let display = {
 
                             getElements.todoModalEdit().showModal()
                             getElements.todoNameEdit().value = todo.name
-                            
-                            // getElements.todoNotesEdit().placeholder = todo.notes
+                            getElements.todoNotesEdit().value = todo.notes
+                            getElements.todoDateEdit().value = todo.date
+                            getElements.todoPriorityEdit().value = todo.priority
                             
                             
 
 
                             submitTodoEdit.onclick = function(){
-                                todo.name = document.getElementById('todo-name-edit').value  
-                                console.log(todo.name)
+                                
                             }
 
                            

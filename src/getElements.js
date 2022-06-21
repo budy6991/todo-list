@@ -58,13 +58,13 @@ export default {
         return document.querySelector('#todo-name-edit')
     }, 
     todoNotesEdit(){
-        return document.getElementById('todo-notes-edit')
+        return document.querySelector('#todo-notes-edit')
     }, 
     todoDateEdit(){
-        return document.getElementById('todo-date-edit')
+        return document.querySelector('#todo-date-edit')
     }, 
     todoPriorityEdit(){
-        return document.getElementById('todo-priority-edit')
+        return document.querySelector('#todo-priority-edit')
     },
     
     
