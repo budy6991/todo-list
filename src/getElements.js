@@ -55,7 +55,7 @@ export default {
         return document.querySelector('.close-todo-modal-edit')
     },
     todoNameEdit(){
-        return document.querySelector('.todo-name-edit')
+        return document.querySelector('#todo-name-edit')
     }, 
     todoNotesEdit(){
         return document.getElementById('todo-notes-edit')

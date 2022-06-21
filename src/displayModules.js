@@ -1,4 +1,4 @@
-import { create, functionsIn, indexOf, remove } from "lodash";
+import { create, functionsIn, get, indexOf, remove } from "lodash";
 import getElements from "./getElements";
 import createProjects from './createProjects'
 import { eventHandlers } from "./eventHandlers";
@@ -87,10 +87,13 @@ let display = {
                         }
 
                         todoExpand.onclick = function(){
+                            console.log(todo.name)
 
                             getElements.todoModalEdit().showModal()
-
-                            document.getElementById('todo-name-edit').placeholder = todo.name
+                            getElements.todoNameEdit().value = todo.name
+                            
+                            // getElements.todoNotesEdit().placeholder = todo.notes
+                            
                             
 
 
