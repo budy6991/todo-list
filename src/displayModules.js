@@ -59,7 +59,7 @@ let display = {
 
                         let todoCard = document.createElement('div')
                         let todoName = document.createElement('div')
-                        let todoNotes = document.createElement('div')
+                        // let todoNotes = document.createElement('div')
                         let todoDate = document.createElement('div')
                         let todoPriority = document.createElement('div')
                         let todoExpand = document.createElement('button')
@@ -74,7 +74,7 @@ let display = {
                         todoDate.append(`Date: ${todo.date}`)
                         todoPriority.append(`Priority: ${todo.priority}`)
 
-                        todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
+                        todoCard.append(todoName,todoDate, todoPriority, todoExpand, todoRemove)
                         
                         todoContainer.append(todoCard)
 
@@ -106,7 +106,7 @@ let display = {
                                 removeChildren(todoCard)                                
                                 
                                 let todoName = document.createElement('div')
-                                let todoNotes = document.createElement('div')
+                                // let todoNotes = document.createElement('div')
                                 let todoDate = document.createElement('div')
                                 let todoPriority = document.createElement('div')
                                 let todoExpand = document.createElement('button')
@@ -128,7 +128,7 @@ let display = {
                                 
                                 
                                 
-                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
+                                todoCard.append(todoName,todoDate, todoPriority, todoExpand, todoRemove)
 
                                 todoExpand.onclick = function(){
                             

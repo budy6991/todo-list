@@ -40,16 +40,15 @@ body {
 .project-card {
     display: flex;
     padding: 1em;
-    border: solid black 1px;
+    
     align-self: flex-start;
     justify-self: start;
     margin: 2em;
     border-radius: 35px;
     background-color: white;
-    border: solid #7200ff 2px ;
-    transition: transform 0.25s ease-in-out;
+    border: inset #7200ff 2px ;
     box-shadow: 1px 1px 5px #c15dff;
-    transition: transform 0.08s ease-in-out;
+    transition: transform 0.15s ease-in-out;
 }
 
 .project-card * {
@@ -97,11 +96,19 @@ body {
 }
 
 .todo-card {
+    display: flex;
     padding: 1em;
-    border: solid black 1px;
     margin: 2%;
+    border-radius: 35px;
+    background-color: white;
+    border: outset #bba1d5 2px ;
+    box-shadow: 1px 1px 5px #c15dff;
+    transition: transform 0.15s ease-in-out;
+}
+
+.todo-card div {
     flex: 1;
-    max-height: 8vh
+    justify-content: space-around;
 }
 
 .close-container {
@@ -128,7 +135,11 @@ body {
     background-color: #7200ff;
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(to right, rgb(255, 255, 255), #7200fd);
+    background-image: linear-gradient(to right, rgb(255, 255, 255), #713695);
+}
+
+.todo-container>:nth-child(2){
+    margin-right: 12%;
 }
 
 .main-container {
