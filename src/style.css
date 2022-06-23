@@ -13,7 +13,6 @@ body {
 }
 
 
-
 .add-project-button {
     margin: 2%;
     padding: 1%;
@@ -40,7 +39,6 @@ body {
 .project-card {
     display: flex;
     padding: 1em;
-    
     align-self: flex-start;
     justify-self: start;
     margin: 2em;
@@ -101,14 +99,36 @@ body {
     margin: 2%;
     border-radius: 35px;
     background-color: white;
-    border: outset #bba1d5 2px ;
+    border: outset #00b893 2px ;
     box-shadow: 1px 1px 5px #c15dff;
     transition: transform 0.15s ease-in-out;
 }
 
 .todo-card div {
     flex: 1;
-    justify-content: space-around;
+    margin: 1em;
+    align-self: center;
+}
+
+.todo-card button {
+    padding: 1rem;
+    margin: 1em;
+    
+}
+
+.todo-expand {
+    background-color: #ffc03a;
+    color: white;
+    border-radius: 15px;
+    border: none;
+
+}
+
+.todo-remove {
+    background-color: red;
+    border-radius: 15px;
+    color: white;
+    border: none;
 }
 
 .close-container {
@@ -117,6 +137,12 @@ body {
     margin: 2%;
     position: absolute;
     right: 0;
+    padding: 1em;
+    border-radius: 100%;
+}
+
+.close-container:hover{
+    cursor: pointer;
 }
 
 .todo-modal {
@@ -151,3 +177,4 @@ body {
     flex-direction: column;
     background-color: white;
 }
+

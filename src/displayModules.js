@@ -34,7 +34,7 @@ let display = {
         expandProject.textContent = 'Expand'
         projectName.textContent = name
 
-        closeContainer.textContent = 'CLOSE'
+        closeContainer.textContent = 'X'
         
         todoContainer.append(closeContainer)
     
@@ -65,8 +65,10 @@ let display = {
                         let todoExpand = document.createElement('button')
                         let todoRemove = document.createElement('button')
 
-                        todoExpand.textContent  = 'EDIT'
+                        todoExpand.textContent  = 'Info/ Edit'
+                        todoExpand.classList.add('todo-expand')
                         todoRemove.textContent = 'X'
+                        todoRemove.classList.add('todo-remove')
                         todoCard.classList.add('todo-card')
 
                         todoName.append(`Name: ${todo.name}`)
@@ -117,8 +119,11 @@ let display = {
                                 todo.date = getElements.todoDateEdit().value
                                 todo.priority = getElements.todoPriorityEdit().value
                                 
-                                todoExpand.textContent  = 'EDIT'
+                                todoExpand.textContent  = 'Info/ Edit'
+                                todoExpand.classList.add('todo-expand')
                                 todoRemove.textContent = 'X'
+                                todoRemove.classList.add('todo-remove')
+
                                 todoCard.classList.add('todo-card')
                                 
                                 todoName.append(`Name: ${todo.name}`)
