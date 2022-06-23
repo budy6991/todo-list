@@ -167,7 +167,10 @@ let display = {
 
                     expandProject.onclick = function (){
                         removeChildren(getElements.mainContainer())
-                        getElements.mainContainer().appendChild(todoContainer)  
+                        getElements.mainContainer().appendChild(todoContainer)
+                        let projectTitle = document.createElement('div')
+                        projectTitle.textContent = project.name
+                        todoContainer.appendChild(projectTitle)  
                                       
                     }
 
