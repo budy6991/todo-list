@@ -79,11 +79,13 @@ let display = {
                         todoContainer.append(todoCard)
 
                         todoRemove.onclick = function(){
+
                            const index = project.todos.indexOf(todo)
                            project.todos.splice(index, 1)
                            todoContainer.removeChild(todoCard)
                            console.log(project.todos)
                            console.log(project)
+
                         }
 
                         todoExpand.onclick = function(){
@@ -94,11 +96,13 @@ let display = {
                             getElements.todoNotesEdit().value = todo.notes
                             getElements.todoDateEdit().value = todo.date
                             getElements.todoPriorityEdit().value = todo.priority
+
+                            console.log(project)
                             
                         
                             submitTodoEdit.onclick = function(){
 
-                                // todoContainer.removeChild(todoCard)
+                                todoContainer.removeChild(todoCard)
                                 
                                 todo.name = getElements.todoNameEdit().value
                                 todo.notes = getElements.todoNotesEdit().value
@@ -109,6 +113,17 @@ let display = {
                                 getElements.todoNotesEdit().value = todo.notes
                                 getElements.todoDateEdit().value = todo.date
                                 getElements.todoPriorityEdit().value = todo.priority
+
+                                todoName.append(`Name: ${todo.name}`)
+                                todoNotes.append(`Notes: ${todo.notes}`)
+                                todoDate.append(`Date: ${todo.date}`)
+                                todoPriority.append(`Priority: ${todo.priority}`)
+
+                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
+                                
+                                todoContainer.append(todoCard)
+
+                                console.log(project)
                                 
                             }
 
@@ -119,7 +134,7 @@ let display = {
 
                     expandProject.onclick = function (){
                         removeChildren(getElements.mainContainer())
-                        getElements.mainContainer().appendChild(todoContainer)
+                        getElements.mainContainer().appendChild(todoContainer)  
                                       
                     }
 
