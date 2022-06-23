@@ -70,7 +70,7 @@ let display = {
                         todoCard.classList.add('todo-card')
 
                         todoName.append(`Name: ${todo.name}`)
-                        todoNotes.append(`Notes: ${todo.notes}`)
+                        // todoNotes.append(`Notes: ${todo.notes}`)
                         todoDate.append(`Date: ${todo.date}`)
                         todoPriority.append(`Priority: ${todo.priority}`)
 
@@ -122,7 +122,7 @@ let display = {
                                 todoCard.classList.add('todo-card')
                                 
                                 todoName.append(`Name: ${todo.name}`)
-                                todoNotes.append(`Notes: ${todo.notes}`)
+                                // todoNotes.append(`Notes: ${todo.notes}`)
                                 todoDate.append(`Date: ${todo.date}`)
                                 todoPriority.append(`Priority: ${todo.priority}`)
                                 

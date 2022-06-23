@@ -7,7 +7,7 @@ body {
     height: 100vh;
     width: 100vw;
     display: flex;
-    background-color: antiquewhite;
+    
     
 }
 
@@ -15,12 +15,17 @@ body {
 
 .add-project-button {
     margin: 2%;
+    padding: 1%;
     align-self:flex-start ;
+    border-radius: 25px;
+    background-color: white;
+    border: solid #7200ff 2px ;
 }
 
 .project-container{
     height: 100vh;
     width: 40vw;
+    overflow: auto;
 }
 
 .project-card {
@@ -37,7 +42,7 @@ body {
     border: solid black 1px;
     margin: 2%;
     flex: 1;
-    max-height: 17vh
+    max-height: 8vh
 }
 
 .close-container {
@@ -50,7 +55,7 @@ body {
 
 .todo-modal {
     padding: 1em;
-    width: 40vw;
+    width: 40vw; 
 }
 
 .expand-project {
@@ -64,13 +69,15 @@ body {
     background: rgb(255, 208, 121);
     display: flex;
     flex-direction: column;
+    
 }
 
 .main-container {
     height: auto;
     width: 30vw;
     flex: 1;
-    background-color: antiquewhite;
+    height: 100vh;
     display: flex;
     flex-direction: column;
+    background-color: white;
 }
