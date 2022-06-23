@@ -48,11 +48,17 @@ body {
     background-color: white;
     border: solid #7200ff 2px ;
     transition: transform 0.25s ease-in-out;
-    box-shadow: 1px 1px 10px #c15dff;
+    box-shadow: 1px 1px 5px #c15dff;
+    transition: transform 0.08s ease-in-out;
 }
 
 .project-card * {
     flex: 1;
+    margin: 1%;
+}
+
+.project-card:hover{
+    transform: scale(1.1);
 }
 
 .add-todo {
@@ -60,6 +66,34 @@ body {
     color: white;
     border: none;
     background-color: #00b893;
+}
+
+.remove-project {
+    border-radius: 35px;
+    color: white;
+    border: none;
+    background-color: #e20000;
+}
+
+.expand-project {
+    
+    border-radius: 35px;
+    color: white;
+    border: none;
+    background-color: #ffc03a;
+
+}
+
+.project-card button:hover {
+    cursor: pointer
+}
+
+.project-card button {
+    transition: transform 0.25s ease-in-out;
+}
+
+.project-card button:active{
+    transform: scale(.7);
 }
 
 .todo-card {
@@ -91,10 +125,10 @@ body {
     height: auto;
     width: 100%;
     flex: 1;
-    background: rgb(255, 208, 121);
+    background-color: #7200ff;
     display: flex;
     flex-direction: column;
-    
+    background-image: linear-gradient(to right, rgb(255, 255, 255), #7200fd);
 }
 
 .main-container {
