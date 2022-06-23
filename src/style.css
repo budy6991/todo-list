@@ -17,9 +17,16 @@ body {
     margin: 2%;
     padding: 1%;
     align-self:flex-start ;
-    border-radius: 25px;
+    border-radius: 35px;
     background-color: white;
     border: solid #7200ff 2px ;
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 1px 1px 10px #888888;
+}
+
+.add-project-button:hover {
+    transform: scale(.9);
+    cursor: pointer
 }
 
 .project-container{
@@ -29,12 +36,21 @@ body {
 }
 
 .project-card {
-    display: block;
+    display: flex;
     padding: 1em;
     border: solid black 1px;
     align-self: flex-start;
     justify-self: start;
-    margin: 2%;
+    margin: 2em;
+    border-radius: 35px;
+    background-color: white;
+    border: solid #7200ff 2px ;
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 1px 1px 10px #888888;
+}
+
+.project-card * {
+    flex: 1;
 }
 
 .todo-card {
