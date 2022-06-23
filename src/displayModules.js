@@ -89,9 +89,10 @@ let display = {
                         }
 
                         todoExpand.onclick = function(){
-                            console.log(todo.name)
+                            
 
                             getElements.todoModalEdit().showModal()
+
                             getElements.todoNameEdit().value = todo.name
                             getElements.todoNotesEdit().value = todo.notes
                             getElements.todoDateEdit().value = todo.date
@@ -102,26 +103,53 @@ let display = {
                         
                             submitTodoEdit.onclick = function(){
 
-                                todoContainer.removeChild(todoCard)
+                                removeChildren(todoCard)                                
+                                
+                                let todoName = document.createElement('div')
+                                let todoNotes = document.createElement('div')
+                                let todoDate = document.createElement('div')
+                                let todoPriority = document.createElement('div')
+                                let todoExpand = document.createElement('button')
+                                let todoRemove = document.createElement('button')
                                 
                                 todo.name = getElements.todoNameEdit().value
                                 todo.notes = getElements.todoNotesEdit().value
                                 todo.date = getElements.todoDateEdit().value
-                                todo.priority = getElements.todoPriority().value
-
-                                getElements.todoNameEdit().value = todo.name
-                                getElements.todoNotesEdit().value = todo.notes
-                                getElements.todoDateEdit().value = todo.date
-                                getElements.todoPriorityEdit().value = todo.priority
-
+                                todo.priority = getElements.todoPriorityEdit().value
+                                
+                                todoExpand.textContent  = 'EDIT'
+                                todoRemove.textContent = 'X'
+                                todoCard.classList.add('todo-card')
+                                
                                 todoName.append(`Name: ${todo.name}`)
                                 todoNotes.append(`Notes: ${todo.notes}`)
                                 todoDate.append(`Date: ${todo.date}`)
                                 todoPriority.append(`Priority: ${todo.priority}`)
-
-                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
                                 
-                                todoContainer.append(todoCard)
+                                
+                                
+                                todoCard.append(todoName,todoNotes,todoDate, todoPriority, todoExpand, todoRemove)
+
+                                todoExpand.onclick = function(){
+                            
+
+                                    getElements.todoModalEdit().showModal()
+        
+                                    getElements.todoNameEdit().value = todo.name
+                                    getElements.todoNotesEdit().value = todo.notes
+                                    getElements.todoDateEdit().value = todo.date
+                                    getElements.todoPriorityEdit().value = todo.priority
+                                }
+
+                                todoRemove.onclick = function(){
+
+                                    const index = project.todos.indexOf(todo)
+                                    project.todos.splice(index, 1)
+                                    todoContainer.removeChild(todoCard)
+                                    console.log(project.todos)
+                                    console.log(project)
+         
+                                 }
 
                                 console.log(project)
                                 
