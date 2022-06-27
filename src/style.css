@@ -155,8 +155,8 @@ body {
 }
 
 .project-title {
+    order: -1;
     background-color: red;
-    position: absolute;
     padding: 1em;
     align-self: flex-start;
     justify-self: start;
@@ -165,7 +165,10 @@ body {
     background-color: white;
     border: inset #7200ff 2px ;
     box-shadow: 1px 1px 5px #c15dff;
-    top: 0;
+    max-height: 2%;
+    overflow: auto;
+    max-width: 25%;
+    
 }
 
 .close-container {
@@ -199,12 +202,9 @@ body {
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to right, rgb(255, 255, 255), #713695);
+    
 }
 
-.todo-container>:nth-child(2){
-    
-    margin-top: 12%;
-}
 
 .main-container {
     height: auto;
@@ -214,4 +214,33 @@ body {
     display: flex;
     flex-direction: column;
     background-color: white;
+    overflow: auto;
+    scrollbar-color:white  white;
+    scrollbar-width: normal;
+}
+
+.project-modal {
+    margin-top: 25%;
+    border-radius: 35px;
+    background-color: white;
+    border: solid #7200ff 2px ;
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 1px 1px 10px #c15dff;
+    
+}
+
+.project-modal > * {
+    padding: 1em;
+    margin: 1em;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+/* .project-modal > :nth-child(2) {
+    background-color: #00b893;
+} */
+
+.project-modal button {
+    margin: 1em;
 }

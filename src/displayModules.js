@@ -165,9 +165,7 @@ let display = {
 
                                 todoExpand.onclick = function(){
                             
-
                                     getElements.todoModalEdit().showModal()
-        
                                     getElements.todoNameEdit().value = todo.name
                                     getElements.todoNotesEdit().value = todo.notes
                                     getElements.todoDateEdit().value = todo.date
