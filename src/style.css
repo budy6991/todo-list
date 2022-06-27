@@ -230,17 +230,32 @@ body {
 }
 
 .project-modal > * {
-    padding: 1em;
     margin: 1em;
-    display: flex;
+    display: flex; 
     flex-direction: column;
     align-items: center;
+
 }
- 
-/* .project-modal > :nth-child(2) {
-    background-color: #00b893;
-} */
+
+.project-modal input[type=text] {
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    outline: none;
+}
+
+input[type=text]:focus {
+    box-shadow: 1px 1px 10px #c15dff;
+}
+
 
 .project-modal button {
     margin: 1em;
+    display: flex;
+    justify-content: center;
+    background-color: #713695;
+    color: white;
+    border-radius: 35px;
+    border: none;
+    padding: 5px;
 }
