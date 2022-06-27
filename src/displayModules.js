@@ -9,6 +9,23 @@ let display = {
 
     project(name) {
 
+        var today = new Date();
+        var dd = today.getDate();
+        var mm = today.getMonth() + 1; //January is 0!
+        var yyyy = today.getFullYear();
+
+        if (dd < 10) {
+        dd = '0' + dd;
+        }
+
+        if (mm < 10) {
+        mm = '0' + mm;
+        } 
+            
+        today = yyyy + '-' + mm + '-' + dd;
+        document.getElementById("todo-date").setAttribute("min", today);
+
+
         let project = document.createElement('div')
         let projectName = document.createElement('p')
         let addTodo = document.createElement('button')
@@ -52,6 +69,10 @@ let display = {
             
             getElements.todoModal().showModal()
             getElements.submitTodo().onclick = function (){
+
+                
+                
+                                
                 
                 createProjects.arrayOfProjects.forEach(project => {
 
