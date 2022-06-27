@@ -175,7 +175,10 @@ let display = {
                         removeChildren(getElements.mainContainer())
                         getElements.mainContainer().appendChild(todoContainer)
                         projectTitle.textContent = project.name
+
+                        if (project.name != '') {
                         todoContainer.appendChild(projectTitle)  
+                        }
                          
                     }
 
