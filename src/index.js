@@ -6,6 +6,7 @@ eventHandlers.addProject()
 eventHandlers.submitProject()
 eventHandlers.closeModal()
 eventHandlers.closeTodoModal()
+eventHandlers.closeTodoModalEdit()
 // eventHandlers.submitTodo()
 
 

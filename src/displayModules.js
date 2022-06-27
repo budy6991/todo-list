@@ -24,6 +24,7 @@ let display = {
             
         today = yyyy + '-' + mm + '-' + dd;
         document.getElementById("todo-date").setAttribute("min", today);
+        document.getElementById("todo-date-edit").setAttribute("min", today);
 
 
         let project = document.createElement('div')

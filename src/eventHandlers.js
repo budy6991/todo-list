@@ -23,6 +23,12 @@ let eventHandlers = {
         }
     },
 
+    closeTodoModalEdit(){
+        getElements.closeTodoModalEdit().onclick = function(){
+            getElements.todoModalEdit().close()
+        }
+    },
+
     submitProject(){
 
         getElements.submitProject().onclick = function(){
