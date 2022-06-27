@@ -63,7 +63,7 @@ body {
 }
 
 .project-card:hover{
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 .add-todo {
@@ -185,10 +185,6 @@ body {
     cursor: pointer;
 }
 
-.todo-modal {
-    padding: 1em;
-    width: 40vw; 
-}
 
 .expand-project {
     background-color: orange;
@@ -220,7 +216,8 @@ body {
 }
 
 .project-modal {
-    margin-top: 25%;
+    margin-top: 10%;
+    margin-left: 1em;
     border-radius: 35px;
     background-color: white;
     border: solid #7200ff 2px ;
@@ -234,7 +231,7 @@ body {
     display: flex; 
     flex-direction: column;
     align-items: center;
-
+    
 }
 
 .project-modal input[type=text] {
@@ -253,9 +250,97 @@ input[type=text]:focus {
     margin: 1em;
     display: flex;
     justify-content: center;
-    background-color: #713695;
     color: white;
     border-radius: 35px;
     border: none;
     padding: 5px;
+}
+
+.submit-project {
+    background-color: #00b893;
+}
+
+.close-modal {
+    background-color: #e20000;
+}
+
+.project-modal button:hover {
+    cursor: pointer;
+}
+.todo-modal, .todo-modal-edit {
+    padding: 1em;
+    margin-top: 6%;
+    margin-left: 1em;
+    border-radius: 35px;
+    background-color: white;
+    border: solid #7200ff 2px ;
+    transition: transform 0.25s ease-in-out;
+    box-shadow: 1px 1px 10px #c15dff;
+}
+
+
+.todo-modal  *, .todo-modal-edit * {
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+    align-items: center;
+}
+
+.todo-modal input[type=text], .todo-modal-edit input[type=text]  {
+    border: none;
+    border-radius: 25px;
+    padding: 5px;
+    outline: none;
+    box-shadow: 1px 1px 10px #c15dff;
+}
+
+textarea {
+    border: none;
+    border-radius: 25px;
+    padding: 10px;
+    outline: none;
+    box-shadow: 1px 1px 10px #c15dff;
+    resize: none;
+}
+
+input[type=date]{
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px #c15dff;
+    border: none;
+}
+
+select{
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px #c15dff;
+    border: none;
+}
+
+option {
+    border-radius: 35px;
+    padding: 10px;
+    box-shadow: 1px 1px 10px #c15dff;
+    border: none;
+    background-color: #713695;
+}
+
+.close-todo-modal, .close-todo-modal-edit {
+    background-color: #e20000;
+    color: white;
+    
+}
+
+.submit-todo, .submit-todo-edit {
+    background-color: #00b893;
+    color: white;
+}
+
+.todo-modal button, .todo-modal-edit button {
+    padding: 5px;
+    border-radius: 35px;
+}
+
+.todo-modal button:hover, .todo-modal-edit button:hover {
+    cursor: pointer;
 }
