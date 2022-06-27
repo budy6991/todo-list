@@ -139,11 +139,19 @@ body {
 
 }
 
+.todo-expand:hover{
+    cursor: pointer;
+}
+
 .todo-remove {
     background-color: red;
     border-radius: 15px;
     color: white;
     border: none;
+}
+
+.todo-remove:hover{
+    cursor: pointer;
 }
 
 .project-title {
