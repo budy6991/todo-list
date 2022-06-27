@@ -133,12 +133,22 @@ body {
 
 .project-title {
     background-color: red;
+    position: absolute;
+    padding: 1em;
+    align-self: flex-start;
+    justify-self: start;
+    margin: 1em;
+    border-radius: 35px;
+    background-color: white;
+    border: inset #7200ff 2px ;
+    box-shadow: 1px 1px 5px #c15dff;
+    top: 0;
 }
 
 .close-container {
     background-color: red;
     color: white;
-    margin: 2%;
+    margin: 1em;
     position: absolute;
     right: 0;
     padding: 1em;
@@ -170,6 +180,7 @@ body {
 
 .todo-container>:nth-child(2){
     margin-right: 12%;
+    margin-top: 12%;
 }
 
 .main-container {
