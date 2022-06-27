@@ -12,6 +12,10 @@ body {
     
 }
 
+.project-card > p {
+    overflow: auto;
+}
+
 
 .add-project-button {
     margin: 2%;
@@ -34,6 +38,9 @@ body {
     height: 100vh;
     width: 40vw;
     overflow: auto;
+    scrollbar-color: #7200ff white;
+    scrollbar-width: normal;
+    
 }
 
 .project-card {
@@ -47,6 +54,7 @@ body {
     border: inset #7200ff 2px ;
     box-shadow: 1px 1px 5px #c15dff;
     transition: transform 0.15s ease-in-out;
+    max-height: 5%;
 }
 
 .project-card * {
@@ -102,12 +110,19 @@ body {
     border: outset #00b893 2px ;
     box-shadow: 1px 1px 5px #c15dff;
     transition: transform 0.15s ease-in-out;
+    max-height: 10%;
 }
 
 .todo-card div {
     flex: 1;
     margin: 1em;
     align-self: center;
+    
+}
+
+.todo-card > div {
+    max-height: 100%;
+    overflow: auto;
 }
 
 .todo-card button {
@@ -192,4 +207,3 @@ body {
     flex-direction: column;
     background-color: white;
 }
-
