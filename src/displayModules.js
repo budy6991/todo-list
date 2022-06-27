@@ -23,6 +23,10 @@ let display = {
         addTodo.classList.add('add-todo')
         removeProject.classList.add('remove-project')
         project.classList.add('project-card')
+
+        let projectTitle = document.createElement('div')
+        projectTitle.classList.add('project-title')
+        
         
         expandProject.classList.add('expand-project')
         todoContainer.classList.add('todo-container')
@@ -64,6 +68,8 @@ let display = {
                         let todoPriority = document.createElement('div')
                         let todoExpand = document.createElement('button')
                         let todoRemove = document.createElement('button')
+
+                        
 
                         todoExpand.textContent  = 'Info/ Edit'
                         todoExpand.classList.add('todo-expand')
@@ -168,10 +174,9 @@ let display = {
                     expandProject.onclick = function (){
                         removeChildren(getElements.mainContainer())
                         getElements.mainContainer().appendChild(todoContainer)
-                        let projectTitle = document.createElement('div')
                         projectTitle.textContent = project.name
                         todoContainer.appendChild(projectTitle)  
-                                      
+                         
                     }
 
                 })
@@ -196,7 +201,9 @@ let display = {
         }
 
         closeContainer.onclick = function(){
+            todoContainer.removeChild(projectTitle)
             removeChildren(getElements.mainContainer())
+              
         }
         
     }

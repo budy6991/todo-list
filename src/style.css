@@ -131,6 +131,10 @@ body {
     border: none;
 }
 
+.project-title {
+    background-color: red;
+}
+
 .close-container {
     background-color: red;
     color: white;
