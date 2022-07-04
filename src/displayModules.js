@@ -5,20 +5,57 @@ import { eventHandlers } from "./eventHandlers";
 import removeChildren from "./removeChildren";
 
 
+function buildProject (name) {
+
+    //Initialize the variables to store the details of the project
+
+    let project = document.createElement('div')
+    let projectName = document.createElement('p')
+    let addTodo = document.createElement('button')
+    let expandProject = document.createElement('button')
+    let removeProject = document.createElement('button')
+    let todoContainer = document.createElement('div')
+    let submitTodoEdit = document.querySelector('.submit-todo-edit')
+    let closeContainer = document.createElement('button')
+    let projectTitle = document.createElement('div')
+
+    //Add the classes to the variables
+
+    project.classList.add('project-card')
+    addTodo.classList.add('add-todo')
+    expandProject.classList.add('expand-project')
+    removeProject.textContent = 'Remove'
+    todoContainer.classList.add('todo-container')
+    projectTitle.classList.add('project-title')
+
+    // Populates the content of the divs 
+
+    removeProject.textContent = 'Remove'
+    addTodo.textContent = 'Add todo'
+    expandProject.textContent = 'Expand'
+    projectName.textContent = name
+    closeContainer.textContent = 'X'
+
+    // Appending the elements. 
+
+    todoContainer.append(closeContainer)
+    
+    project.append(projectName, addTodo, removeProject, expandProject)
+    getElements.projectContainer().appendChild(project)
+
+    //Set the data attributes 
+
+    project.dataset.identifier = name 
+    addTodo.dataset.identifier = name 
+
+
+}
+
+
 let display = {
 
     project(name) {
-        
-
-        function saveToLocalStorage(){
-            localStorage.setItem(
-                'myLocalStorage',
-                 JSON.stringify(createProjects.arrayOfProjects))
-            const mylocaldata = JSON.parse(localStorage.getItem('myLocalStorage'))
-            console.log(mylocaldata)
-        }
-
-        
+           
 
         var today = new Date();
         var dd = today.getDate();
@@ -34,6 +71,8 @@ let display = {
         } 
             
         today = yyyy + '-' + mm + '-' + dd;
+
+
         document.getElementById("todo-date").setAttribute("min", today);
         document.getElementById("todo-date-edit").setAttribute("min", today);
 
@@ -77,7 +116,7 @@ let display = {
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
-        saveToLocalStorage()
+        
 
         addTodo.onclick = function (){
             
@@ -121,7 +160,7 @@ let display = {
                         
                         todoContainer.append(todoCard)
 
-                        saveToLocalStorage()
+                        
                         
 
                         todoRemove.onclick = function(){
