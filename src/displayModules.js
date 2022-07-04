@@ -8,10 +8,21 @@ import removeChildren from "./removeChildren";
 let display = {
 
     project(name) {
+        
+
+        function saveToLocalStorage(){
+            localStorage.setItem(
+                'myLocalStorage',
+                 JSON.stringify(createProjects.arrayOfProjects))
+            const mylocaldata = JSON.parse(localStorage.getItem('myLocalStorage'))
+            console.log(mylocaldata)
+        }
+
+        
 
         var today = new Date();
         var dd = today.getDate();
-        var mm = today.getMonth() + 1; //January is 0!
+        var mm = today.getMonth() + 1; 
         var yyyy = today.getFullYear();
 
         if (dd < 10) {
@@ -66,18 +77,20 @@ let display = {
         project.dataset.identifier = name 
         addTodo.dataset.identifier = name 
 
+        saveToLocalStorage()
+
         addTodo.onclick = function (){
             
             getElements.todoModal().showModal()
             getElements.submitTodo().onclick = function (){
 
-                
-                
-                                
-                
+            
+
                 createProjects.arrayOfProjects.forEach(project => {
 
                     if (project.name === addTodo.dataset.identifier) {
+
+
                         
                         let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
                     
@@ -108,13 +121,15 @@ let display = {
                         
                         todoContainer.append(todoCard)
 
+                        saveToLocalStorage()
+                        
+
                         todoRemove.onclick = function(){
 
                            const index = project.todos.indexOf(todo)
                            project.todos.splice(index, 1)
                            todoContainer.removeChild(todoCard)
-                           console.log(project.todos)
-                           console.log(project)
+                           
 
                         }
 
@@ -128,7 +143,7 @@ let display = {
                             getElements.todoDateEdit().value = todo.date
                             getElements.todoPriorityEdit().value = todo.priority
 
-                            console.log(project)
+                            
                             
                         
                             submitTodoEdit.onclick = function(){
@@ -177,18 +192,17 @@ let display = {
                                     const index = project.todos.indexOf(todo)
                                     project.todos.splice(index, 1)
                                     todoContainer.removeChild(todoCard)
-                                    console.log(project.todos)
-                                    console.log(project)
+                                    
          
                                  }
 
-                                console.log(project)
+                                
                                 
                             }
 
                         }
                                   
-                        console.log(createProjects.arrayOfProjects)
+                        
                     }
 
                     expandProject.onclick = function (){
@@ -213,10 +227,9 @@ let display = {
             createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
                 const index = createProjects.arrayOfProjects.indexOf(project)
                 createProjects.arrayOfProjects.splice(index, 1) 
-                console.log(createProjects.arrayOfProjects)
+                
                 if (project.todos.length != 0) {
-                    console.log('Hola buenos dias')
-                    console.log(project.todos)
+                    
                     getElements.mainContainer().removeChild(todoContainer)
                 }
             }} )   

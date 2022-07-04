@@ -2,6 +2,7 @@ import getElements from "./getElements";
 import createProjects from './createProjects'
 import displayModules from './displayModules'
 
+
 let eventHandlers = {
 
     
@@ -39,6 +40,7 @@ let eventHandlers = {
 
             displayModules.project(getElements.projectName())
 
+            
             
         
         }
