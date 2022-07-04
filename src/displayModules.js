@@ -5,116 +5,14 @@ import { eventHandlers } from "./eventHandlers";
 import removeChildren from "./removeChildren";
 
 
-function buildProject (name) {
-
-    //Initialize the variables to store the details of the project
-
-    let project = document.createElement('div')
-    let projectName = document.createElement('p')
-    let addTodo = document.createElement('button')
-    let expandProject = document.createElement('button')
-    let removeProject = document.createElement('button')
-    let todoContainer = document.createElement('div')
-    let submitTodoEdit = document.querySelector('.submit-todo-edit')
-    let closeContainer = document.createElement('button')
-    let projectTitle = document.createElement('div')
-
-    //Add the classes to the variables
-
-    project.classList.add('project-card')
-    addTodo.classList.add('add-todo')
-    expandProject.classList.add('expand-project')
-    removeProject.textContent = 'Remove'
-    todoContainer.classList.add('todo-container')
-    projectTitle.classList.add('project-title')
-
-    // Populates the content of the divs 
-
-    removeProject.textContent = 'Remove'
-    addTodo.textContent = 'Add todo'
-    expandProject.textContent = 'Expand'
-    projectName.textContent = name
-    closeContainer.textContent = 'X'
-
-    // Appending the elements. 
-
-    todoContainer.append(closeContainer)
-    
-    project.append(projectName, addTodo, removeProject, expandProject)
-    getElements.projectContainer().appendChild(project)
-
-    //Set the data attributes 
-
-    project.dataset.identifier = name 
-    addTodo.dataset.identifier = name 
-
-    console.log(createProjects.arrayOfProjects)
-
-    // Adds the event listeners 
-
-    removeProject.onclick = function (){
-        getElements.projectContainer().removeChild(project)
-        createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
-            const index = createProjects.arrayOfProjects.indexOf(project)
-            createProjects.arrayOfProjects.splice(index, 1) 
-            
-            console.log('Me cago en dios')
-
-            if (project.todos.length != 0) {
-                
-                getElements.mainContainer().removeChild(todoContainer)
-            }
-        }} )   
-        
-    }
-
-}
-
-function buildTodo () {
-
-    //Creates the todo and stores in the project
-
-    let todo = createProjects.createTodo(getElements.todoName(), getElements.todoNotes(), getElements.todoDate(), getElements.todoPriority())
-    
-    project.storeTodos(todo)
-
-    //Initialize the variables
-
-    let todoCard = document.createElement('div')
-    let todoName = document.createElement('div')
-    let todoDate = document.createElement('div')
-    let todoPriority = document.createElement('div')
-    let todoExpand = document.createElement('button')
-    let todoRemove = document.createElement('button')
-
-    //Adds the classes
-    
-    todoExpand.classList.add('todo-expand')
-    todoRemove.textContent = 'X'
-    todoRemove.classList.add('todo-remove')
-    todoCard.classList.add('todo-card')
-
-    //Populates the content 
-    
-    todoExpand.textContent  = 'Info/ Edit'
-
-
-    //Appending
-
-    todoName.append(`Name: ${todo.name}`)
-    todoDate.append(`Date: ${todo.date}`)
-    todoPriority.append(`Priority: ${todo.priority}`)
-    todoCard.append(todoName,todoDate, todoPriority, todoExpand, todoRemove)
-    todoContainer.append(todoCard)
-}
-
-
-
-
 let display = {
 
     project(name) {
-           
+        
+
+        
+        
+
 
         var today = new Date();
         var dd = today.getDate();
@@ -130,14 +28,50 @@ let display = {
         } 
             
         today = yyyy + '-' + mm + '-' + dd;
-
-
         document.getElementById("todo-date").setAttribute("min", today);
         document.getElementById("todo-date-edit").setAttribute("min", today);
 
-        buildProject(name)
-        
 
+        let project = document.createElement('div')
+        let projectName = document.createElement('p')
+        let addTodo = document.createElement('button')
+        let expandProject = document.createElement('button')
+        let removeProject = document.createElement('button')
+        let todoContainer = document.createElement('div')
+        
+        let submitTodoEdit = document.querySelector('.submit-todo-edit')
+
+        let closeContainer = document.createElement('button')
+
+        addTodo.classList.add('add-todo')
+        removeProject.classList.add('remove-project')
+        project.classList.add('project-card')
+
+        let projectTitle = document.createElement('div')
+        projectTitle.classList.add('project-title')
+        
+        
+        expandProject.classList.add('expand-project')
+        todoContainer.classList.add('todo-container')
+
+        closeContainer.classList.add('close-container')
+
+        removeProject.textContent = 'Remove'
+        addTodo.textContent = 'Add todo'
+        expandProject.textContent = 'Expand'
+        projectName.textContent = name
+
+        closeContainer.textContent = 'X'
+        
+        todoContainer.append(closeContainer)
+    
+        project.append(projectName, addTodo, removeProject, expandProject)
+        getElements.projectContainer().appendChild(project)
+
+        project.dataset.identifier = name 
+        addTodo.dataset.identifier = name 
+
+       
         addTodo.onclick = function (){
             
             getElements.todoModal().showModal()
@@ -157,6 +91,7 @@ let display = {
 
                         let todoCard = document.createElement('div')
                         let todoName = document.createElement('div')
+                        // let todoNotes = document.createElement('div')
                         let todoDate = document.createElement('div')
                         let todoPriority = document.createElement('div')
                         let todoExpand = document.createElement('button')
@@ -179,7 +114,7 @@ let display = {
                         
                         todoContainer.append(todoCard)
 
-                        
+
                         
 
                         todoRemove.onclick = function(){
@@ -280,7 +215,19 @@ let display = {
         
         }
 
-        
+        removeProject.onclick = function (){
+            getElements.projectContainer().removeChild(project)
+            createProjects.arrayOfProjects.forEach(project =>{ if(project.name === projectName.textContent){
+                const index = createProjects.arrayOfProjects.indexOf(project)
+                createProjects.arrayOfProjects.splice(index, 1) 
+                
+                if (project.todos.length != 0) {
+                    
+                    getElements.mainContainer().removeChild(todoContainer)
+                }
+            }} )   
+            
+        }
 
         closeContainer.onclick = function(){
             todoContainer.removeChild(projectTitle)
